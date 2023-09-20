@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pham Cuong</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #FAF0E4;
+      margin: 0;
+      padding: 0;
+      animation: colorChange 10s infinite;
+      background-image: url("99.png");
+      background-repeat: repeat;
+    }
+    h1, h2, h3 {
+  position: relative;
+  padding: 10px 20px;
+  background-color: #6cc5c1;
+  color: #fff;
+  border-radius: 5px;
+  margin: 20px 0;
+  animation: titleAnimation 1s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  font-family: sans-serif;
+  font-weight: sans-serif;
+}
+
+
+    /* Header styles */
+    .header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 48px;
+      position: relative;
+      animation: textAnimation 3s ease-in-out infinite;
+    }
+
+    .header h1::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #fff;
+      animation: lineAnimation 3s ease-in-out infinite;
+    }
+
+    .about-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.about-content {
+  margin-top: 20px;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.about-content img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.about-content p {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  max-width: 800px;
+}
+.about-me .social-links {
+  margin-top: 20px;
+}
+
+.about-me .social-links a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.about-me .social-links img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.about-me .social-links img:hover {
+  transform: scale(1.2);
+}
+.about-me {
+  background-color: #e2dbdb;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.about-me h2 {
+  color: #ebebeb;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.about-me-content {
+  display: none;
+  margin-top: 10px;
+}
+
+
+    .skills {
+      padding: 50px;
+      text-align: center;
+      animation: fadeInUp 1s ease-in-out;
+      display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+    }
+    .skills table {
+      border-collapse: separate;
+      border-spacing: 10px;
+      animation: tableAnimation 1s ease-in-out;
+    }
+
+    .skills th, .skills td {
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .skills th:hover, .skills td:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    
+
+    table {
+      margin: auto;
+      width: 80%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+    }
+
+    th {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .photo-gallery {
+      padding: 50px;
+      display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+    }
+
+    .photo-gallery img {
+      display: inline-block;
+      max-width: 25%;
+      margin: 10px;
+      opacity: 1;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      transform: scale(1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .photo-gallery img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .contact {
+      padding: 50px;
+      text-align: center;
+      animation: fadeInUp 1s ease-in-out;
+      display: flex;
+  flex-direction: column;
+  align-items: center;
+
+    }
+
+    .contact a {
+      color: #333;
+      text-decoration: none;
+    }
+    
+    .video {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .video-container {
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+
+
+
+
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes colorChange {
+      0% {
+        background-color: #FAF0E4;
+      }
+      50% {
+        background-color: #E4FAF0;
+      }
+      100% {
+        background-color: #FAF0E4;
+      }
+    }
+    @keyframes textAnimation {
+      0%, 100% {
+        color: #fff;
+        text-shadow: none;
+      }
+      50% {
+        color: #ffcc00;
+        text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00;
+      }
+    }
+
+    @keyframes lineAnimation {
+      0%, 100% {
+        width: 0;
+      }
+      50% {
+        width: 100%;
+      }
+    }
+    @keyframes tableAnimation {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes tableAnimation {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .contact {
+  padding: 50px;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.contact-form .form-group {
+  flex-basis: 100%;
+  margin-bottom: 20px;
+}
+
+.contact-form .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-form .form-group input,
+.contact-form .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background-color: transparent;
+  transition: border-color 0.3s ease-in-out;
+  font-family: Arial, sans-serif;
+}
+
+.contact-form .form-group input:focus,
+.contact-form .form-group textarea:focus {
+  outline: none;
+  border-color: #555;
+}
+
+.contact-form .form-group textarea {
+  resize: vertical;
+}
+
+.contact-form .form-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-family: sans-serif;
+}
+
+.contact-form .form-button:hover {
+  background-color: #555;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes titleAnimation {
+      0%, 100% {
+        transform: translateX(0);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      50% {
+        transform: translateX(10px);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      }
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1 class="animated fadeIn">Welcome to my page</h1>
+  </header>
+
+  <section class="about-me">
+  <h2>About Me</h2>
+    <div class="about-content">
+      <img src="2.jpg" alt="Your Image" class="animated fadeInLeft">
+      <p>Hello everyone, I'm PhamCuong. Currently, I am a second-year student at the School of Business (HSB), National University of Hanoi. I have a strong passion for the Chinese language, and after graduation, I plan to go to China. In addition, I also enjoy reading books and playing chess. That's a little bit of information about myself. Thank you for visiting my page!</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=100048433724676" target="_blank"><img src="Facebook.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/pham__cuong22/" target="_blank"><img src="Ins.jpeg" alt="Instagram"></a>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="skills">
+    <h2>Skills</h2>
+    <table>
+     
+      <tr>
+        <td>Communication</td>
+        <td>I love to stand in front of a lot of people and inpire them.</td>
+      </tr>
+      <tr>
+        <td>Playing chess</td>
+        <td>i have been paticipating some of competitions to chase up my idol. He is Magnus Calsen who is the best chess champion in the world</td>
+      </tr>
+      <tr>
+        <td>Learning Chinese</td>
+        <td>Description 3</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="photo-gallery">
+    <h2>Photo Gallery</h2>
+    <div class="gallery-container">
+      <img src="68.jpg" alt="Image 1">
+      <img src="69.jpg" alt="Image 2">
+      <img src="IMG_8009.JPG" alt="Image 3">
+    </div>
+  </section>
+  
+  <section class="video">
+    <div class="video-container">
+      <video controls>
+        <source src="cuong1.mp4" type="video/mp4">
+      </video>  
+
+    
+  </section>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <form class="contact-form">
+      <div class="form-group">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" placeholder="Enter your message"></textarea>
+      </div>
+      <button type="submit" class="form-button">Submit</button>
+    </form>
+  </section>
+  
+  
+  
+  
+</body>
+</html>
